@@ -3,7 +3,40 @@ body {
   background-color: #f5f5f5;
   font-family: Helvetica;
 }
-
+/*login*/
+.login-title{
+  font-weight: bolder
+}
+.pw-text{
+  font-size: 14px;
+  color: #717171;
+}
+i{
+  font-size: 19px;
+  margin-right: 10px;
+}
+.emailInput{
+font-weight: 400
+}
+.forgottenPassword{
+  color: #3b49df;
+  font-size: 14px;
+}
+.passwordInput{
+  font-weight: 400
+}
+.continueButton{
+  background-color: #3b49df;
+}
+.bg-forem {
+  background-color: #0A3E4A
+}
+.bg-github {
+  background-color: #24292e
+}
+.bg-twitter {
+  background-color: #1da1f2
+}
 /* NAV */
 .nav__container {
   height: 56px;
