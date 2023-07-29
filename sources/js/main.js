@@ -48,7 +48,7 @@ const printAllPost = async  (listPosts) => {
         <div class="post__info">
           <p class="post__name">Jatin Sharma for Documatic</p>
           <br />
-          <p class="post__date">Posted on june 10</p>
+          <p class="post__date">Posted ${post.createdAt}</p>
         </div>
       </div>
       <h1 class="post__title">
@@ -61,7 +61,7 @@ const printAllPost = async  (listPosts) => {
       </div>
       <div class="post__reactions d-flex d-row">
         <img src="sources/images/reactions.png" alt="" />
-        <span class="reactions__number">101 Reactions</span>
+        <span class="reactions__number">${post.vote} Reactions</span>
         <span class="comments__number"
           ><img src="sources/images/comments.png" alt="" />3
           Comments</span
@@ -180,6 +180,34 @@ inputSearch.addEventListener('keyup', ( e )=>{
   })
   printAllPost(nuevaLista)
 })
+
+// filter by relevant, lates, top
+
+let itemRelevant= document.getElementById('item-relevant');
+let itemLatest = document.getElementById('item-latest');
+let itemTop = document.getElementById('item-top');
+
+itemRelevant.addEventListener('click', ( e )=>{
+  let relevants = allPosts.filter(( post )=>{
+    return post.relevant === true;
+  })
+  printAllPost(relevants);
+})
+
+itemLatest.addEventListener('click', ( e )=>{
+  let latest = allPosts.sort(( a , b )=>{
+    return new Date(b.createdAt) - new Date(a.createdAt);
+  })
+  printAllPost(latest)
+})
+
+itemTop.addEventListener('click', ( e )=>{
+  let listTop = allPosts.sort(( a , b )=>{
+    return b.vote - a.vote;
+  })
+  printAllPost(listTop)
+})
+
 
 
 
