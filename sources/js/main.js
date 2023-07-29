@@ -1,4 +1,23 @@
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // inicia jesus
 let allPosts = []
 
