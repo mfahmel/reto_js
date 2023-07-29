@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome! -DEV Community (Reto) - Login</title>
+
+    <!-- CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png"
+    />
+    <!-- Iconos -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+  </head>
+
+  <body>
+    <nav class="container d-flex col-12 col-md-7 col-lg-7 col-xl-6 mb-2 align-items-center">
+      <img
+        class="logo"
+        src="https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png"
+        alt="dev.to logo"
+      />
+      <span>Create Post</span>
+    </nav>
+    <!-- New Post -->
+    <div
+      class="container d-flex col-12 col-md-7 col-lg-7 col-xl-5 mb-0 bg-white flex-column p-4"
+    >
+      <div class="">
+        <form>
+          <input
+          class="addImage  justify-content-center align-items-center p-2"
+            type="text"
+            id="urlInput"
+            name="imageUrl"
+            placeholder="Add a cover image"
+            required
+          />
+        </form>
+      </div>
+      
+      <form method="post">
+          
+        <input class="createPost createPost1 border-0 mt-3 mb-3" type="text" id="nombre" name="nombre" required placeholder="New post title here..."
+        > 
+        <br>
+          
+          <input class="createPost  border-0" type="text" id="nombre" name="nombre" required placeholder="Add up to 4 tags..."
+          > 
+   
+    </div>
+        <!-- Buttons  -->
+        <div class="container d-flex col-12 col-md-7 col-lg-7 col-xl-5 p-3 bg-light postButtons">
+            <button type="button" class="format-button border-0 bg-transparent textIcons m-0" onclick="applyBold()"><i class="bi bi-type-bold"></i>
+            </button>
+            <button type="button" class="format-button border-0 bg-transparent textIcons m-0" onclick="applyItalic()"><i class="bi bi-type-italic"></i>
+            </button>
+            <button type="button" class="format-button order border-0 bg-transparent textIcons m-0" onclick="applyItalic()"><i class="bi bi-link-45deg"></i></button>
+            <button type="button" class="format-button order border-0 bg-transparent textIcons m-0" onclick="applyItalic()"><i class="bi bi-list-ol"></i></button>
+            <button type="button" class="format-button order border-0 bg-transparent textIcons m-0" onclick="applyItalic()"><i class="bi bi-list-ul"></i></button>
+            <button type="button" class="format-button order border-0 bg-transparent textIcons m-0" onclick="applyItalic()"><i class="bi bi-type-h1"></i></button>
+            <button type="button" class="format-button order border-0 bg-transparent textIcons m-0" onclick="applyItalic()"><i class="bi bi-quote"></i></button>
+            <button type="button" class="format-button order border-0 bg-transparent textIcons m-0" onclick="applyItalic()"><i class="bi bi-code"></i></button>
+            <button type="button" class="format-button order border-0 bg-transparent textIcons m-0" onclick="applyItalic()"><i class="bi bi-code-square"></i></button>
+            <button type="button" class="format-button order border-0 bg-transparent textIcons m-0" onclick="applyItalic()"><i class="bi bi-lightning-charge"></i></button>
+            <button type="button" class="format-button order border-0 bg-transparent textIcons m-0" onclick="applyItalic()"><i class="bi bi-card-image"></i></button>
+            <button type="button" class="format-button order border-0 bg-transparent textIcons m-0" onclick="applyItalic()"><i class="bi bi-three-dots-vertical"></i></button>
+    
+        </div>
+        <!-- Text Area -->
+        <div class="container d-flex col-12 col-md-7 col-lg-7 col-xl-5 mb-0 bg-white flex-column p-4">
+
+   
+        <textarea class="border-0 postContent" id="commentInput" name="comment" required placeholder="Write your post content here..."></textarea>
+        <br>
+       </div>
+       <div class="container d-flex col-12 col-md-7 col-lg-7 col-xl-5 bg-transparent mt-3">
+        <button class="publishButton p-2 btn btn-primary" type="submit">Publish</button>
+        <span class="p-2">Save Draft</span>
+       </div>
+       <!-- ASIDE -->
+       <aside class="d-flex col-0 col-md-3 col-lg-3 col-xl-3 bg-white">
+        <h2>Writing a Great Post Title</h2>
+<span>Think of your post title as a super short (but compelling!) description — like an overview of the actual post in one short sentence.
+    Use keywords where appropriate to help ensure people can find your post by search.
+    
+</span>
+       </aside>
+  </body>
+
+    <!-- FOOTER -->
+    <footer></footer>
+      
+   
+  </body>
+</html>
