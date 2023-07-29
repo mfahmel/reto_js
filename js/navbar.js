@@ -2,8 +2,8 @@ const createNavbar = (isLogged) => {
   
   let navHtml = `
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <nav class="navbar p-0 px-3 bg-white nav__container">
-  <div class="d-flex align-items-center"> 
+  <nav class="navbar d-flex p-0 px-3 bg-white nav__container ">
+  <div class="d-flex justify-content-center"> 
     
   <button class="navbar-toggler border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
   <span class="navbar-toggler-icon">
