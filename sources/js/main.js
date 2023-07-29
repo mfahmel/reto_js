@@ -21,17 +21,25 @@ const getAllPosts = async () => {
 const printAllPost = async  (listPosts) => {
   let mainSection = document.getElementById('cards-container');
   let imagePost = document.getElementsByClassName('image-post');
+  let tags = document.getElementById('section-tags-in-post');
 
+  // obteniendo un arreglo de avatars igual al numero de posts
   let imagenAvatar = await fetch(`https://randomuser.me/api/?results=${listPosts.length}`);
   let data = await imagenAvatar.json();
+  
 
+  // creando las cards de los posts
   let cards = ''
   listPosts.forEach((post, i) => {
-   
+
+    let tagsElements = post.tags.reduce(( acum, curr)=>{
+      return acum + `<div><button class="post__language">#${curr}</button></div>`
+    },'');
+
     cards += `<a
     href="post/simplify-your-c-code-top-5-refactoring-tools-1bo0.html"
     class="text-decoration-none"
-  >
+    >
     <div class="card" style="width: 100%; border-radius: 5px">
       <img
         class="card-img-top ${ i == 0 ?  '': 'image-post'}"
@@ -54,10 +62,8 @@ const printAllPost = async  (listPosts) => {
       <h1 class="post__title">
         ${post.title}
       </h1>
-      <div class="post__prog__lang">
-        <div><button class="post__language">#csharp</button></div>
-        <div><button class="post__language">#webdev</button></div>
-        <div><button class="post__language">#beginners</button></div>
+      <div id='section-tags-in-post' class="post__prog__lang">
+        ${tagsElements}
       </div>
       <div class="post__reactions d-flex d-row">
         <img src="sources/images/reactions.png" alt="" />
@@ -154,6 +160,8 @@ const print3Post = (threePostArray) => {
 }
 
 
+// del arreglo de posts, agarramos los primeros 3 que 
+// tengan el tag, si son menos de 3 me traigo esos.
 const get3PostByTag = (posts, tagName) => {
   let result = posts.filter((post) => {
 
