@@ -8,3 +8,7 @@ let token = localStorage.getItem("token");
 
 
 document.getElementById("nav-wrapper").innerHTML = createNavbar(token);
+document.getElementById("log-out").addEventListener("click", () => {
+  localStorage.removeItem("token");
+  window.open("../views/login.html", "_self");
+});
