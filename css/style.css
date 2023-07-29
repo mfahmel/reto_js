@@ -93,6 +93,10 @@ font-weight: 400
   font-family: ff-monospace: "Roboto Mono", monospace;
 
 }
+.postContent:focus{
+  outline: none;
+
+}
 .addImage{
   border-radius: 5px;
   border: 1px solid gray;
@@ -119,6 +123,18 @@ font-size: 23px;
 }
 .publishButton:hover{
   background-color: #2f3ab2;
+}
+.saveDraft{
+  margin-left: 10px;
+  cursor: pointer;
+
+}
+.saveDraft:hover{
+  background-color: #3b49df;
+  color: white;
+  border-radius: 5px;3b49df;
+  cursor: pointer;
+
 }
 /* ASIDE1 */
 .icon__null{
