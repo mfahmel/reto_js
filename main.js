@@ -1,8 +1,8 @@
-let token = localStorage.getItem("token");
-console.log(token);
+// let token = localStorage.getItem("token");
+// console.log(token);
 
-!token
-  ? window.open("/login.html", "_self") : null;
+// !token
+//   ? window.open("/login.html", "_self") : null;
   
 
   
