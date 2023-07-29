@@ -19,7 +19,7 @@ const getAllPosts = async () => {
 }
 
 const printAllPost = async  (listPosts) => {
-  let mainSection = document.getElementById('main-section');
+  let mainSection = document.getElementById('cards-container');
   let imagePost = document.getElementsByClassName('image-post');
 
   let imagenAvatar = await fetch(`https://randomuser.me/api/?results=${listPosts.length}`);
