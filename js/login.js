@@ -1,5 +1,6 @@
+import { createNavbar } from "./navbar.js";
+
 let token = localStorage.getItem("token");
-console.log(token);
 token
   ? window.open(`../index.html`, "_self") : null;
 
@@ -8,3 +9,6 @@ document.getElementById("login-button").addEventListener("click", () => {
 
     window.open("../index.html", "_self");
 });
+
+
+document.getElementById("nav-wrapper").innerHTML = createNavbar(token);
