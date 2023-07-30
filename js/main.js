@@ -1,6 +1,7 @@
 import { createNavbar } from "./navbar.js";
 
 
+
 let token = localStorage.getItem("token");
 !token
 ? window.open(`../views/login.html`, "_self") : null;
@@ -15,6 +16,7 @@ window.open("../views/login.html", "_self");
 
 
 // inicia jesus
+
 let allPosts = []
 
 const getAllPosts = async () => {
@@ -28,7 +30,6 @@ const getAllPosts = async () => {
     let newObj = { ...data[i], key: i }  // creas un nuevo objeto modificado para agregar una key: valor
     allPosts.push(newObj)
   }
-  console.log(allPosts)
   // console.log( allPosts[ Math.floor(Math.random() * allPosts.length ) ])
   return allPosts;
 }
@@ -42,7 +43,7 @@ const printAllPost = async  (listPosts) => {
   let imagenAvatar = await fetch(`https://randomuser.me/api/?results=${listPosts.length}`);
   let data = await imagenAvatar.json();
   
-
+    console.log(listPosts)
   // creando las cards de los posts
   let cards = ''
   listPosts.forEach((post, i) => {
@@ -52,7 +53,7 @@ const printAllPost = async  (listPosts) => {
     },'');
 
     cards += `<a
-    href="post/simplify-your-c-code-top-5-refactoring-tools-1bo0.html"
+    href="views/detailPost.html?id=${post.key}"
     class="text-decoration-none"
     >
     <div class="card" style="width: 100%; border-radius: 5px">
@@ -161,7 +162,7 @@ const print3Post = (threePostArray) => {
   threePostArray.forEach((post) => {
     listaPostByTag += `
         <a
-        class="listing__type"
+        class="listing__type listing1"
         href="#"
         class="my-2 text-dark text-decoration-none"
         >${post.title}
@@ -173,7 +174,11 @@ const print3Post = (threePostArray) => {
   })
 
   containerFirstTag.innerHTML = listaPostByTag
-  console.log(containerFirstTag)
+  let getListTags = document.querySelectorAll('.listing1');
+  getListTags.forEach(( item )=>{
+    
+  })
+
 }
 
 
@@ -222,7 +227,9 @@ itemRelevant.addEventListener('click', ( e )=>{
 
 itemLatest.addEventListener('click', ( e )=>{
   let latest = allPosts.sort(( a , b )=>{
-    return new Date(b.createdAt) - new Date(a.createdAt);
+    let dateA = Date.now(b.createdAt)
+    let dateB = Date.now(a.createdAt)
+    return dateB - dateA;
   })
   printAllPost(latest)
 })
