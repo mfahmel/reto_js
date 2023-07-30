@@ -20,6 +20,7 @@ const createNavbar = (isLogged) => {
   <form class="d-flex form__search" role="search">
   <div class="input-group">
   <input
+  id='input-search'
   type="text"
   class="form-control border-end-0"
   placeholder="Search..."
