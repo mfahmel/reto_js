@@ -29,18 +29,18 @@
 <div class="container d-flex col-12 col-md-7 col-lg-7 col-xl-5 mb-0 bg-white flex-column p-4">
 <form>
 <!-- INPUT IMAGE -->
-<input class="addImage justify-content-center align-items-center p-2" type="text" id="urlInput" name="imageUrl" placeholder="Add a cover image" required>
+<input class="addImage justify-content-center align-items-center p-2 inputs-post" type="text" id="urlInput" name="imageUrl" placeholder="Add a cover image" required>
 </form>
 <form method="post">
 <!-- INPUT POST TITLE -->
 
 
-<input class="createPost createPost1 border-0 mt-3 mb-3" type="text" id="nombre" name="nombre" required placeholder="New post title here...">
+<input class="createPost createPost1 border-0 mt-3 mb-3 inputs-post" type="text" id="nombre" name="title" required placeholder="New post title here...">
 <br>
 <!-- INPUT TAGS -->
 
 
-<input class="createPost border-0" type="text" id="tags" name="tags" required placeholder="Add up to 4 tags...">
+<input class="createPost border-0 inputs-post" type="text" id="tags" name="tags" required placeholder="Add up to 4 tags...">
 </form>
 </div>
 
@@ -65,13 +65,13 @@
 <!-- INPUT CONTENT -->
 
 
-<textarea class="border-0 postContent" id="commentInput" name="comment" required placeholder="Write your post content here..."></textarea>
+<textarea class="border-0 postContent inputs-post" id="commentInput" name="content" required placeholder="Write your post content here..."></textarea>
 <br>
 </div>
 
 
 <div class="container d-flex col-12 col-md-7 col-lg-7 col-xl-5 bg-transparent mt-3">
-<button class="publishButton p-2 btn btn-primary" type="submit">Publish</button>
+<button id="boton-publish" class="publishButton p-2 btn btn-primary" type="submit">Publish</button>
 <span class="p-2 saveDraft">Save Draft</span>
 </div>
 
@@ -79,6 +79,6 @@
 <!-- FOOTER -->
 <footer></footer>
 
-
+  <script src="../js/createPost.js"></script>
 </body>
 </html>
