@@ -60,9 +60,11 @@ const createNavbar = (isLogged) => {
   
   ${isLogged
   ? `<div class="d-flex">
-  <button class="btn btn-outline-primary d-none d-md-block createPostButton">
-  Create Post
+  <a href="../views/createPost.html">
+  <button class="btn btn-outline-success d-none d-md-block createPostButton">
+    Create Post
   </button>
+</a>
   <svg
   xmlns="http://www.w3.org/2000/svg"
   width="24"
@@ -106,15 +108,15 @@ const createNavbar = (isLogged) => {
   />
   </button>
   <ul class="dropdown-menu dropdown-menu-end wider">
-  <li><button class="dropdown-item" type="button">Emi sigue aquí <br><small>@emisigueaqui</small></br></button></li>
-  <li><hr class="dropdown-divider"></li>
-  <li><button class="dropdown-item" type="button">Dashboard</button></li>
-  <li><button class="dropdown-item" type="button">Create Post</button></li>
-  <li><button class="dropdown-item" type="button">Reading List</button></li>
-  <li><button class="dropdown-item" type="button">Settings</button></li>
-  <li><hr class="dropdown-divider"></li>
-  <li><button id="log-out" class="dropdown-item" type="button">Sign Out</button></li>
-  </ul>
+    <li><button class="dropdown-item" type="button">Emi sigue aquí <br><small>@emisigueaqui</small></br></button></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><button class="dropdown-item" type="button">Dashboard</button></li>
+    <li><a href="./views/createPost.html" class="dropdown-item">Create Post</a></li>
+    <li><button class="dropdown-item" type="button">Reading List</button></li>
+    <li><button class="dropdown-item " type="button">Settings</button></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><button id="log-out" class="dropdown-item" type="button">Sign Out</button></li>
+   </ul>
   </div>
   
   
