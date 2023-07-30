@@ -3,9 +3,16 @@ const createNavbar = (isLogged) => {
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-  <nav class="navbar d-flex p-0 px-3 bg-white nav__container ">
+  
+  
+  
+  
+  <nav class="navbar p-0 px-3 nav__container justify-content-center">
+  
+  
+  
   <div class="d-flex justify-content-center">
-  <button class="navbar-toggler border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+  <button class="navbar-toggler bg-white d-md-none container-block " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
   <span class="navbar-toggler-icon">
   </span>
   </button>
@@ -60,9 +67,11 @@ const createNavbar = (isLogged) => {
   
   ${isLogged
   ? `<div class="d-flex">
-  <button class="btn btn-outline-primary d-none d-md-block createPostButton">
-  Create Post
+  <a href="../views/createPost.html">
+  <button class="btn btn-outline-success d-none d-md-block createPostButton">
+    Create Post
   </button>
+</a>
   <svg
   xmlns="http://www.w3.org/2000/svg"
   width="24"
@@ -106,15 +115,15 @@ const createNavbar = (isLogged) => {
   />
   </button>
   <ul class="dropdown-menu dropdown-menu-end wider">
-  <li><button class="dropdown-item" type="button">Emi sigue aquí <br><small>@emisigueaqui</small></br></button></li>
-  <li><hr class="dropdown-divider"></li>
-  <li><button class="dropdown-item" type="button">Dashboard</button></li>
-  <li><button class="dropdown-item" type="button">Create Post</button></li>
-  <li><button class="dropdown-item" type="button">Reading List</button></li>
-  <li><button class="dropdown-item" type="button">Settings</button></li>
-  <li><hr class="dropdown-divider"></li>
-  <li><button id="log-out" class="dropdown-item" type="button">Sign Out</button></li>
-  </ul>
+    <li><button class="dropdown-item" type="button">Emi sigue aquí <br><small>@emisigueaqui</small></br></button></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><button class="dropdown-item" type="button">Dashboard</button></li>
+    <li><a href="./views/createPost.html" class="dropdown-item">Create Post</a></li>
+    <li><button class="dropdown-item" type="button">Reading List</button></li>
+    <li><button class="dropdown-item " type="button">Settings</button></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><button id="log-out" class="dropdown-item" type="button">Sign Out</button></li>
+   </ul>
   </div>
   
   
