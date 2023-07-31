@@ -16,7 +16,7 @@ const createNavbar = (isLogged) => {
   <!-- BÚSQUEDA -->
   
   
-  <div class="d-none d-md-block m-auto nav__form__container">
+  <div class="d-none d-md-block m-auto nav_form_container">
   <form class="d-flex form__search" role="search">
   <div class="input-group">
   <input
@@ -196,5 +196,3 @@ const createNavbar = (isLogged) => {
   
   
   export { createNavbar };
-
-

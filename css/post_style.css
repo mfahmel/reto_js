@@ -7,10 +7,10 @@ body {
 .nav__container {
   height: 56px;
 }
-.nav__container .nav__form__container .form__search {
+.nav_container .navformcontainer .form_search {
   width: 420px;
 }
-.nav__container .nav__form__container .search__button .search__hover:hover {
+.nav_container .navformcontainer .searchbutton .search_hover:hover {
   background-color: rgba(40, 116, 166, 0.1) !important;
 }
 
@@ -18,13 +18,13 @@ body {
 .footer__container {
   background-color: #e5e5e5;
 }
-.footer__container .footer__a {
+.footer_container .footer_a {
   color: rgb(59, 73, 223);
 }
-.footer__container .footer_ul__container > li > a {
+.footer_container .footer_ul_container > li > a {
   font-size: 0.8rem;
   color: rgb(59, 73, 223);
 }
-.footer__container .footer__container__line__height {
+.footer_container .footercontainerline_height {
   line-height: 0rem;
 }/*# sourceMappingURL=post_style.css.map */
