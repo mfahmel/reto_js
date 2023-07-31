@@ -162,106 +162,118 @@ const getOneRandomPost = (arrayPosts) => {
 // JACE
 // buscar en la lista de posts los primeros 3 posts 
 // que coincidan con el tag discuss, 
-const print3Post = (threePostArray) => {
-
-  let containerFirstTag = document.getElementById('list-post-by-tag');
-  let listsPostByTag = ''
-  threePostArray.forEach((post) => {
-      listsPostByTag += `
-        <a class="listing__type listing1" href="#" class="my-2 text-dark text-decoration-none">${post.title}
-          <div>
-            <p class="comment__vinc" href="#">${Math.floor(Math.random() * 30)} Comentarios</p>
-          </div>
-        </a>
-        <hr class="my-2" />`
-  })
- console.log(listsPostByTag)
-  containerFirstTag.innerHTML = listsPostByTag
-  let getListsTags = document.querySelectorAll(".listing1")
-  console.log(getListsTags);
-  getListsTags.forEach((tag, i)=>{
-      tag.addEventListener("click",(e)=>{
-        window.open( `views/detailPost.html?id=${threePostArray[i].key}` , "_self" )
-      })
-  })
 
 
 
-}
-
-///watercolor 2
-const print3Post2nd = (threePostArray) => {
-
-
-  let containerSecondTag = document.getElementById('listPostTag2');
-  let listsPostByTag2nd = ''
-  threePostArray.forEach((post) => {
-      listsPostByTag2nd += `
-        <a class="listing__type listing2" href="#" class="my-2 text-dark text-decoration-none">${post.title}
-          <div>
-            <p class="comment__vinc" href="#">${Math.floor(Math.random() * 30)} Comentarios</p>
-          </div>
-        </a>
-        <hr class="my-2" />`
-  })
-
-  // console.log(getListsTags2nd)
-  containerSecondTag.innerHTML = listsPostByTag2nd
-  let getListsTags2nd = document.querySelectorAll(".listing2")
-  console.log(getListsTags2nd)
-  getListsTags2nd.forEach((tag, i)=>{
-      tag.addEventListener("click",(e)=>{
-        window.open( `views/detailPost.html?id=${threePostArray[i].key}` , "_self" )
-      })
-  })
-
-
-}
-
-
-const get3PostByTag2nd = (posts, tagName) => {
-  let result2 = posts.filter((post) => {
-      //cambiar tagnames
-      let hasTag2 = post.tags.find((tag) => {
-          return tag === tagName.trim();
-      })
-      return hasTag2;
-  })
-  if (result2.length > 3) {
-      result2 = result2.slice(0, 3);
-      print3Post2nd(result2);
-  } else {
-     
-      print3Post2nd(result2);
-  }
-
-
-}
 
 
 
-// del arreglo de posts, agarramos los primeros 3 que 
-// tengan el tag, si son menos de 3 me traigo esos.
-const get3PostByTag = (posts, tagName) => {
-  let result = posts.filter((post) => {
-      //cambiar tagnames
-      let hasTag = post.tags.find((tag) => {
-          return tag === tagName.trim();
-      })
-      return hasTag;
-  })
-  if (result.length > 3) {
 
 
-      result = result.slice(0, 3);
-      print3Post(result);
-  } else {
-     
-      print3Post(result);
-  }
 
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
