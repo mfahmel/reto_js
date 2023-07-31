@@ -1,3 +1,4 @@
+//max
 import { createNavbar } from "./navbar.js";
 
 
@@ -7,16 +8,15 @@ let token = localStorage.getItem("token");
 ? window.open(`../views/login.html`, "_self") : null;
 
 
-
 document.getElementById("nav-wrapper").innerHTML = createNavbar(token);
 document.getElementById("log-out").addEventListener("click", () => {
-localStorage.removeItem("token");
-window.open("../views/login.html", "_self");
+  localStorage.removeItem("token");
+  window.open("../views/login.html", "_self");
 });
 
+// max
 
 // inicia jesus
-
 let allPosts = []
 
 const getAllPosts = async () => {
@@ -78,7 +78,7 @@ const printAllPost = async  (listPosts) => {
       <h1 class="post__title">
         ${post.title}
       </h1>
-      <div id='section-tags-in-post' class="post__prog__lang">
+      <div id='section-tags-in-post' class="post_prog_lang">
         ${tagsElements}
       </div>
       <div class="post__reactions d-flex d-row">
@@ -94,7 +94,7 @@ const printAllPost = async  (listPosts) => {
       </div>
       <div class="post__reply">
         <img
-          class="rounded-5 post__photo__reply"
+          class="rounded-5 post_photo_reply"
           alt="algo"
           src="sources/images/moi.svg"
           alt=""
@@ -108,7 +108,7 @@ const printAllPost = async  (listPosts) => {
       </div>
       <div class="post__reply">
         <img
-          class="rounded-5 post__photo__reply"
+          class="rounded-5 post_photo_reply"
           alt="algo"
           src="sources/images/oli.svg"
           alt=""
@@ -118,7 +118,7 @@ const printAllPost = async  (listPosts) => {
           <p class="reply__text">No pues está cabrón</p>
         </div>
       </div>
-      <p class="reply__see__more">See all 1 comments</p>
+      <p class="reply_see_more">See all 1 comments</p>
     </div>
   </a>`
 
@@ -135,6 +135,7 @@ const printAllPost = async  (listPosts) => {
 // en el dom sobre un elemento
 const printRandomPost = (randomPost) => {
   let containerRandomPost = document.getElementById('random-post-container'); // contenedor
+
   let imgContainer = document.createElement('div');   // div
   let imgRandomPost = document.createElement('img');  // imagen 
   imgRandomPost.setAttribute('src', randomPost.imageUrl);
@@ -144,6 +145,12 @@ const printRandomPost = (randomPost) => {
   titulo.innerText = randomPost.title;
   containerRandomPost.append(imgContainer);
   containerRandomPost.append(titulo);
+
+  
+  containerRandomPost.addEventListener('click', ()=>{
+    window.open(`views/detailPost.html?id=${randomPost.key}`, '_self');
+  })
+
 }
 
 const getOneRandomPost = (arrayPosts) => {
@@ -156,51 +163,106 @@ const getOneRandomPost = (arrayPosts) => {
 // buscar en la lista de posts los primeros 3 posts 
 // que coincidan con el tag discuss, 
 const print3Post = (threePostArray) => {
+
   let containerFirstTag = document.getElementById('list-post-by-tag');
-
-  let listaPostByTag = ''
+  let listsPostByTag = ''
   threePostArray.forEach((post) => {
-    listaPostByTag += `
-        <a
-        class="listing__type listing1"
-        href="#"
-        class="my-2 text-dark text-decoration-none"
-        >${post.title}
-        <div>
-          <a class="comment__vinc" href="#">${Math.floor(Math.random() * 30)} Comentarios</a>
-        </div>
-      </a>
-      <hr class="my-2" />`
+      listsPostByTag += `
+        <a class="listing__type listing1" href="#" class="my-2 text-dark text-decoration-none">${post.title}
+          <div>
+            <p class="comment__vinc" href="#">${Math.floor(Math.random() * 30)} Comentarios</p>
+          </div>
+        </a>
+        <hr class="my-2" />`
+  })
+ console.log(listsPostByTag)
+  containerFirstTag.innerHTML = listsPostByTag
+  let getListsTags = document.querySelectorAll(".listing1")
+  console.log(getListsTags);
+  getListsTags.forEach((tag, i)=>{
+      tag.addEventListener("click",(e)=>{
+        window.open( `views/detailPost.html?id=${threePostArray[i].key}` , "_self" )
+      })
   })
 
-  containerFirstTag.innerHTML = listaPostByTag
-  let getListTags = document.querySelectorAll('.listing1');
-  getListTags.forEach(( item )=>{
-    
-  })
+
 
 }
+
+///watercolor 2
+const print3Post2nd = (threePostArray) => {
+
+
+  let containerSecondTag = document.getElementById('listPostTag2');
+  let listsPostByTag2nd = ''
+  threePostArray.forEach((post) => {
+      listsPostByTag2nd += `
+        <a class="listing__type listing2" href="#" class="my-2 text-dark text-decoration-none">${post.title}
+          <div>
+            <p class="comment__vinc" href="#">${Math.floor(Math.random() * 30)} Comentarios</p>
+          </div>
+        </a>
+        <hr class="my-2" />`
+  })
+
+  // console.log(getListsTags2nd)
+  containerSecondTag.innerHTML = listsPostByTag2nd
+  let getListsTags2nd = document.querySelectorAll(".listing2")
+  console.log(getListsTags2nd)
+  getListsTags2nd.forEach((tag, i)=>{
+      tag.addEventListener("click",(e)=>{
+        window.open( `views/detailPost.html?id=${threePostArray[i].key}` , "_self" )
+      })
+  })
+
+
+}
+
+
+const get3PostByTag2nd = (posts, tagName) => {
+  let result2 = posts.filter((post) => {
+      //cambiar tagnames
+      let hasTag2 = post.tags.find((tag) => {
+          return tag === tagName.trim();
+      })
+      return hasTag2;
+  })
+  if (result2.length > 3) {
+      result2 = result2.slice(0, 3);
+      print3Post2nd(result2);
+  } else {
+     
+      print3Post2nd(result2);
+  }
+
+
+}
+
 
 
 // del arreglo de posts, agarramos los primeros 3 que 
 // tengan el tag, si son menos de 3 me traigo esos.
 const get3PostByTag = (posts, tagName) => {
-
   let result = posts.filter((post) => {
-
-    let hasTag = post.tags.find((tag) => {
-      return tag === tagName.trim();
-    })
-    return hasTag;
+      //cambiar tagnames
+      let hasTag = post.tags.find((tag) => {
+          return tag === tagName.trim();
+      })
+      return hasTag;
   })
   if (result.length > 3) {
-    result = result.slice(0, 3);
-    print3Post(result);
+
+
+      result = result.slice(0, 3);
+      print3Post(result);
   } else {
-    print3Post(result);
+     
+      print3Post(result);
   }
 
+
 }
+
 
 
 // filter by word
@@ -251,6 +313,9 @@ getAllPosts().then((posts) => {
 
   let tagName = document.getElementById('tag-for-search');
   get3PostByTag(posts, tagName.innerText.split('#')[1]);
+
+  let tagName2nd = document.getElementById('the2ndTag');
+  get3PostByTag2nd(posts, tagName2nd.innerText.split('#')[1])
 
 });
 // termina jesus
