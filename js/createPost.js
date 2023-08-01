@@ -23,19 +23,19 @@ const crearFormatoFecha = () => {
 }
 
 const crearNuevoPost = async () => {
+    
     if (nuevoObjeto.imageUrl === '' || nuevoObjeto.title === '' || nuevoObjeto.content === '') {
         return
     }
     nuevoObjeto.relevant = Math.floor(Math.random() + 1) ? true : false;
     nuevoObjeto.createdAt = crearFormatoFecha();
     nuevoObjeto.vote = Math.floor(Math.random() * 300);
-    console.log('ok')
-    let result = await fetch("https://mi-proyecto-7bd3d-default-rtdb.firebaseio.com/posts/.json", {
+    let response = await fetch("https://mi-proyecto-7bd3d-default-rtdb.firebaseio.com/posts/.json", {
         method: 'POST',
         body: JSON.stringify(nuevoObjeto),
     });
-    console.log(result)
-    // sessionStorage.setItem('lastPost', result.name );
+    let data = await response.json();
+    await localStorage.setItem('lastPost', data.name );
     window.open('/', '_self')
 }
 
