@@ -36,7 +36,7 @@ const crearNuevoPost = async () => {
     });
     let data = await response.json();
     await localStorage.setItem('lastPost', data.name );
-    window.open('/', '_self')
+    window.open('/', '_self') 
 }
 
 botonPublish.addEventListener('click', (ev) => {
